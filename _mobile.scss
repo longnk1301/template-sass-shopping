@@ -1,0 +1,47 @@
+@media (max-width: 576px) {
+	.top {
+		height: auto;
+		text-align: center;
+		.top-language {
+			.info-lang {
+				position: static;
+				visibility: visible;
+				opacity: 1;
+				width: 100%;
+				a {
+					color: $mauchutop;
+				}
+			}
+		}
+	}
+	.menu-and-logo {
+		.menutop {
+			padding: 15px 15px;
+			.menuright {
+				li.nav-item {
+					a.nav-link {
+						line-height: 40px;
+						border-bottom: 1px dashed #cfcfcf;
+					}
+				}
+			}
+			.navbar-collapse {
+				z-index: 3;
+				background-color: #fcfcfced;
+				padding-left: 20px;
+			}
+		}
+	}
+	.slide-image {
+		margin-top: 45px;
+		img {
+			height: 200px;
+		}
+	}
+	.content {
+		.item {
+			margin: 10px;
+			margin-left: -20px;
+		}
+	}
+}

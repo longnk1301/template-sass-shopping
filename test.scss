@@ -1,0 +1,225 @@
+$mauxamdam: #2c3e50;
+$maulogo: #1abc9c;
+$mauchutop: #ffffff;
+$maubutton: #21303f;
+$mauchunhat: #a1b1bc;
+$maunenxam: #f9fafb;
+$maunentitle: #F7F7FB;
+$mauvien: #ffffff;
+
+$cochumenu: 15px;
+$fontchu: 'Roboto', sans-serif;
+$cochunho: 13px;
+$cochuvua: 14px;
+$cochutieude: 30px;
+
+$topheight: 50px;
+$logoheight: 70px;
+$tieude: 40px;
+$dodaicontainer: 1020px;
+$space: 20px;
+
+@mixin reset() {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: $fontchu;
+}
+
+.top {
+	height: $topheight;
+	line-height: $topheight;
+	background-color: $mauxamdam;
+	color: $mauchutop;
+	.top-language {
+		position: relative;
+		&:hover {
+			.info-lang {
+				opacity: 1;
+				visibility: visible;
+				top: $topheight;
+				background-color: $mauxamdam;
+				z-index: 3;
+				a {
+					text-decoration: none;
+					color: $mauchutop;
+					&:hover {
+						color: $maulogo;
+					}
+				}
+			}
+		}
+		b {
+			cursor: pointer;
+			font-size: $cochuvua;
+		}
+		.info-lang {
+			position: absolute;
+			width: 155px;
+			opacity: 0;
+			transition: 0.3s;
+			visibility: hidden;
+			a {
+				display: block;
+				padding: 1px 10px;
+				color: #414141;
+				font-size: $cochunho;
+				text-align: center;
+			}
+		}
+	} /* end top-language */
+	.right {
+		.button {
+			display: inline;
+			a.btn {
+				font-size: $cochunho;
+				color: $mauchutop;
+				background-color: $maubutton;
+				height: 30px;
+				padding: auto 11px;
+				text-transform: uppercase;
+				font-weight: bold;
+				margin-right: 15px;
+				i {
+					padding-right: 7px;
+				}
+			}
+		}/* end button */
+		.links {
+			display: inline;
+			ul {
+				display: inline;
+				li {
+					display: inline;
+					list-style: none;
+					a {
+						color: $mauchutop;
+						font-size: $cochunho;
+						padding-right: 15px;
+					}
+				}
+			}
+		}/* end links */
+	}
+}
+nav {
+	img {
+		width: 100px;
+	}
+}
+.menu-and-logo {
+	height: $logoheight;
+	line-height: $logoheight;
+	.menutop {
+		@include reset;
+		background-color: $maunentitle !important;
+		a.navbar-brand {
+			@include reset;
+		}
+		ul.menuright {
+			li.nav-item {
+				a.nav-link {
+					// @include reset;
+					font-size: $cochumenu;
+					color: $mauxamdam;
+					font-weight: bold;
+				}
+			}
+		}/* end menuright */
+	}
+}
+.title {
+	margin: 15px 0;
+	height: $tieude;
+	line-height: $tieude;
+	background-color: $maunenxam;
+	position: relative;
+	&:after {
+		content: '';
+		width: 100%;
+		height: $tieude/3;
+		position: absolute;
+		top: 0px;
+		background-image: -webkit-linear-gradient(top,rgba(0,0,0,0.1),rgba(255,255,255,0));
+	}
+	.left {
+		h2 {
+			height: $tieude;
+			line-height: $tieude;
+			font-size: $cochutieude;
+			color: $mauxamdam;
+			a {
+				i {
+					background-color: $mauchutop;
+					border: 1px solid $mauvien;
+					border-radius: 3px;
+					display: inline-block;
+					padding: 6px;
+					height: 40px;
+					width: 40px;
+					color: $mauchunhat;
+					font-size: $cochuvua;
+					text-align: center;
+					line-height: 40px;
+					&:before {
+						position: relative;
+						top: -4px;
+					}
+				}
+			}
+		}
+	}
+	.right {
+		.breadcrumb {
+			@include reset;
+			background-color: transparent;
+			.breadcrumb-item {
+				font-size: $cochuvua;
+				color: $mauchunhat;
+				&:first-child:before {
+					content: "";
+				}
+				&:before {
+					display: inline-block;
+					padding-right: .5rem;
+					padding-left: .5rem;
+					color: #818a91;
+					content: "\f105";
+					font: normal normal normal 14px/1 FontAwesome;
+					font-size: inherit;
+					text-rendering: auto;
+					-webkit-font-smoothing: antialiased;
+				}
+			}
+		}
+	}
+}
+.slide-image {
+	img {
+		height: 260px;
+		width: 100%;
+	}
+}
+.content {
+	padding: 30px;
+	height: auto;
+	.item {
+		width: ($dodaicontainer - (2*$space))/3;
+		border: 1px solid $mauchunhat;
+		border-radius: 10px;
+		display: inline-block;
+		box-sizing: border-box;
+		margin: 20px $space;
+		img {
+			width: 100%;
+			text-align: center;
+		}
+		.desc {
+			text-align: justify;
+		}
+	}
+}
+
+@import "mobile";
